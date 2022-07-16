@@ -8,7 +8,7 @@ for color in lista_colores:
         break #Ponemos un break para salir cuando lo encuentre
     else:
         #print ("El color indicado no esta en la lista")
-        print (f"No hay el color {mi_color}")
+        print (f"No hay el color {color}")
     
 # rango_largo = range (1, 15)
 # print (rango_largo)
