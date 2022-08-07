@@ -47,12 +47,11 @@ class Moto(Vehiculo):
 
 class Coche(Vehiculo):
     def __init__(self, color, velocidaMaxima, marca, ruedas=4):
-        Vehiculo.__init__(self, color, velocidaMaxima, marca)
-        self.ruedas = ruedas
+        Vehiculo.__init__(self, color, velocidaMaxima, marca) #Clase padre
+        self.ruedas = ruedas #Aqui para poner lo que diferencia a la clase
 
     def muestraEstado(self):
-        print(
-            f"Soy de la marca {self.marca}, con un color {self.color},\n velocidad maxima de {self.velocidadMaxima} y tengo {self.ruedas} ruedas")
+        print(f"Soy de la marca {self.marca}, con un color {self.color},\n velocidad maxima de {self.velocidadMaxima} y tengo {self.ruedas} ruedas")
 
 
 nisan = Coche('rojo', 120, 'nisan', 4)
@@ -60,11 +59,13 @@ nisan.arrancar()
 nisan.acelerar()
 nisan.muestraEstado()
 nisan.acelerar()
+
 renault = Coche('verde', 130, 'Renault', 4)
 renault.arrancar()
 renault.acelerar()
 renault.acelerar()
 renault.muestraEstado()
+
 yamaha = Moto('azul', 140, 'Yamaha', 2)
 yamaha.arrancar()
 yamaha.acelerar()
