@@ -221,3 +221,40 @@ datosUnidos = pd.concat([datosUSA,datosFrancia])
 datosUnidos.head()
 
 datosUnidos.tail()
+
+"""USO DE GRAFICOS CON SEABORN"""
+
+# Commented out IPython magic to ensure Python compatibility.
+import matplotlib.pyplot as plt
+import seaborn as sns
+#Esta linea solo se añade en caso que estemos en un notebook
+# %matplotlib inline
+
+from seaborn import lmplot
+
+lmplot("points", "price",data=datos,fit_reg=False)
+
+sns.heatmap(datos.isnull())
+
+lmplot("points", "price",data=datos,fit_reg=True)
+
+"""Histograma"""
+
+sns.displot(datos["points"],bins=10,kde=True)
+
+"""Borrado los datos faltantes de winery"""
+
+sns.displot(datos["winery"].dropna())
+
+sns.boxplot(x="points",y="price",data=datos)
+
+"""Grafica de violin"""
+
+from seaborn import violinplot
+sns.set(rc={"figure.figsize":(10,6)})
+violinplot(x="points", y="price",data=datos)
+
+"""Grafica con piplot"""
+
+fig = plt.figure(figsize=(10,7))
+sns.pairplot(datos,hue="country")
